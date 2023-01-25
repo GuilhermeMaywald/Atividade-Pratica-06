@@ -23,11 +23,11 @@ function FormPreRegister(){
         setTermos (e.target.checked)
     }
 
-    function handleFormSubmit(){
-        if(categoria === '') {
-            alert("")
-        }
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log(categoria, email, sexo, termos)
     }
+
     return (
         <>
         <form onSubmit={handleFormSubmit} className="form-categoria">
