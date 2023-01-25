@@ -1,4 +1,5 @@
 import {useState} from "react"
+import './FormPreRegister.css'
 
 function FormPreRegister(){
     const [categoria, setCategoria] = useState('')
@@ -29,9 +30,9 @@ function FormPreRegister(){
     }
     return (
         <>
-        <h1>Pré cadastro</h1>
-        <form onSubmit={handleFormSubmit}>
-            <div onChange={handleFieldCategoria}>
+        <form onSubmit={handleFormSubmit} className="form-categoria">
+        <h1>PRÉ CADASTRO</h1>
+            <div className="div-categoria" onChange={handleFieldCategoria}>
                 <p>Categoria</p>
                 <input type="radio" name="categoria" value="Aluno" />
                 <label>Aluno</label>
@@ -39,12 +40,12 @@ function FormPreRegister(){
                 <label>Professor</label>
             </div>
             <br/>
-            <div>
+            <div className="div-email">
                 <label>E-mail</label>
                 <input onChange={handleFieldEmail} value={email} type="email" name="email" placeholder="Adicione seu email"/>
             </div>
             <br/>
-            <div>
+            <div className="div-sexo">
                 <label>Sexo</label>
                 <select onChange={handleFieldSexo} name="sexo" defaltValue="masculino">
                     <option value="masculino">masculino</option>
@@ -57,7 +58,7 @@ function FormPreRegister(){
                 <lebel>Aceito os termos de uso</lebel>
             </div>
             <br/>
-            <button type="submit">Registrar</button>
+            <button className="btn-registrar" type="submit">Registrar</button>
         </form>
         </>
     )
